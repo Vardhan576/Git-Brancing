@@ -128,18 +128,9 @@ with main* pointing here
 
 **Solution Diagram (Answer State):**
 ```
-C0
-  |
-  v
-C1
-  |
-  v
-C2 (After: git commit)
-  |
-  v
-C3 (After: git commit)
-with main* pointing here
-```
+
+```<img width="1125" height="786" alt="Screenshot 2025-12-16 104714" src="https://github.com/user-attachments/assets/a39a966b-f132-4844-80eb-2769ffd5e556" />
+
 
 ---
 
@@ -147,6 +138,7 @@ with main* pointing here
 
 **Problem Statement:**
 Create a new branch named 'bugFix' and check it out. Understand that branches are lightweight pointers that allow parallel development.
+
 
 **Visual Diagram (Current State):**
 ```
