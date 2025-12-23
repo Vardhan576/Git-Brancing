@@ -1,24 +1,30 @@
 # Git-Brancing
 Learning Git Branching
 
-## Completed Levels (5/5)
-
-Successfully completed all 5 introductory levels of Learn Git Branching tutorial on December 23, 2025.
-
 ### Level 1: Introduction to Git Commits
 **Objective**: Make two commits to understand how Git commits work.
 
 **Commands Used**:
+```
 git commit 
 git commit
+```
+- 
+**Problem Statement:**
+Learn how Git commits work by making two commits. Understand that commits are lightweight snapshots of your project that maintain history.
 
-**Concepts Learned**:
-- Commits are snapshots of your project
-- Each commit has a parent reference
-- HEAD points to the current commit
-- Commits are lightweight and efficient
+**Visual Diagram (Current State):**
+```
+C0 (Initial Commit)
+  |
+  v
+C1 (Starting Point)
+with main* pointing here
+```
 
-**Status**: COMPLETED (2 commands, matched solution)
+**Solution Diagram (Answer State):**
+<img width="1051" height="600" alt="Screenshot 2025-12-23 120550" src="https://github.com/user-attachments/assets/4624eba2-14df-4d99-81d6-af64124f3b9b" />
+
 
 ---
 
@@ -26,15 +32,23 @@ git commit
 **Objective**: Create a new branch named bugFix and switch to it.
 
 **Commands Used**:
+```
 git checkout -b bugFix
+```
+**Problem Statement:**
+Create a new branch named 'bugFix' and check it out. Understand that branches are lightweight pointers that allow parallel development.
 
-**Concepts Learned**:
-- Branches are lightweight pointers to commits
-- git checkout -b creates and switches to a branch in one command
-- Branch names appear with asterisk when checked out
-- Multiple branches can point to the same commit
 
-**Status**: COMPLETED (1 command, exceeded solution efficiency)
+**Visual Diagram (Current State):**
+```
+C0 - C1 (C2)
+main* pointing at C2
+```
+
+**Solution Diagram (Answer State):**
+
+
+<img width="1919" height="915" alt="Screenshot 2025-12-23 121735" src="https://github.com/user-attachments/assets/d23b6f27-0bf4-42ca-b996-c8e3338cd4db" />
 
 ---
 
@@ -42,19 +56,18 @@ git checkout -b bugFix
 **Objective**: Create branches, make commits on each, then merge them together.
 
 **Commands Used**:
+```
 git checkout -b bugFix
 git commit
 git checkout main
 git commit
 git merge bugFix
+```
+**Problem Statement:**
+Create diverging branches on main and bugFix, make commits on each, then merge bugFix into main. Learn about merge commits with two parents.
 
-**Concepts Learned**:
-- Merge commits combine two branch histories
-- A merge commit has two parents (both branch histories)
-- git merge integrates changes from another branch
-- Merging maintains the complete history
+**Solution Diagram (Answer State - After Merge):**
 
-**Status**: COMPLETED (5 commands, matched solution)
 
 ### Level 4: Git Rebase
 **Objective**: Create parallel branches and rebase to linearize history.
@@ -74,7 +87,7 @@ git rebase main
 - Useful for maintaining clean, linear project history
 - Both approaches (merge vs rebase) achieve the same end state but with different histories
 
-**Status**: COMPLETED (6 commands, matched solution)
+
 
 ---
 
@@ -95,44 +108,12 @@ git checkout C4
 
 ---
 
-## Summary
 
-- **Total Levels Completed**: 5/5
-- **Date Completed**: December 23, 2025
-- **Total Commands Executed**: 20
-- **Efficiency**: Exceeded solution for 1 level, matched for 4 levels
-
-## Key Takeaways
-
-1. **Commits** are snapshots of your work
-2. **Branches** are lightweight pointers allowing parallel development
-3. **Merging** combines histories maintaining a complete record
-4. **Rebasing** linearizes history by replaying commits
-5. **HEAD** can point to branches OR commits directly
 
 ## Level-wise Screenshots and Diagrams
 
-### Level 1: Introduction to Git Commits
-
-**Problem Statement:**
-Learn how Git commits work by making two commits. Understand that commits are lightweight snapshots of your project that maintain history.
-
-**Visual Diagram (Current State):**
-```
-C0 (Initial Commit)
-  |
-  v
-C1 (Starting Point)
-with main* pointing here
-```
-
-**Solution Diagram (Answer State):**
-```
-
-```<img width="1125" height="786" alt="Screenshot 2025-12-16 104714" src="https://github.com/user-attachments/assets/a39a966b-f132-4844-80eb-2769ffd5e556" />
 
 
----
 
 ### Level 2: Branching in Git
 
@@ -169,17 +150,7 @@ C0-C1
 ```
 
 **Solution Diagram (Answer State - After Merge):**
-```
-      C2
-     / \\
-    /   \\
-   C1   C3
-    \\   /
-     \\ /
-      C4 (Merge Commit)
-   main* pointing here
-   bugFix also pointing at C3
-```
+
 
 ---
 
