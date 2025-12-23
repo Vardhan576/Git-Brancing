@@ -109,3 +109,142 @@ git checkout C4
 3. **Merging** combines histories maintaining a complete record
 4. **Rebasing** linearizes history by replaying commits
 5. **HEAD** can point to branches OR commits directly
+
+## Level-wise Screenshots and Diagrams
+
+### Level 1: Introduction to Git Commits
+
+**Problem Statement:**
+Learn how Git commits work by making two commits. Understand that commits are lightweight snapshots of your project that maintain history.
+
+**Visual Diagram (Current State):**
+```
+C0 (Initial Commit)
+  |
+  v
+C1 (Starting Point)
+with main* pointing here
+```
+
+**Solution Diagram (Answer State):**
+```
+C0
+  |
+  v
+C1
+  |
+  v
+C2 (After: git commit)
+  |
+  v
+C3 (After: git commit)
+with main* pointing here
+```
+
+---
+
+### Level 2: Branching in Git
+
+**Problem Statement:**
+Create a new branch named 'bugFix' and check it out. Understand that branches are lightweight pointers that allow parallel development.
+
+**Visual Diagram (Current State):**
+```
+C0 - C1 (C2)
+main* pointing at C2
+```
+
+**Solution Diagram (Answer State):**
+```
+C0 - C1 (C2)
+     with main and bugFix* both pointing here
+```
+
+---
+
+### Level 3: Branching and Merging
+
+**Problem Statement:**
+Create diverging branches on main and bugFix, make commits on each, then merge bugFix into main. Learn about merge commits with two parents.
+
+**Visual Diagram (Current State - Diverged Branches):**
+```
+      C2 (main)
+     /
+C0-C1
+     \\
+      C3 (bugFix*)
+```
+
+**Solution Diagram (Answer State - After Merge):**
+```
+      C2
+     / \\
+    /   \\
+   C1   C3
+    \\   /
+     \\ /
+      C4 (Merge Commit)
+   main* pointing here
+   bugFix also pointing at C3
+```
+
+---
+
+### Level 4: Git Rebase
+
+**Problem Statement:**
+Create diverging branches and rebase bugFix onto main to linearize the history. Understand that rebase replays commits on top of another branch.
+
+**Visual Diagram (Current State - Diverged):**
+```
+     C2 (main*)
+    /
+C0-C1
+    \\
+     C3 (bugFix*)
+```
+
+**Solution Diagram (Answer State - After Rebase):**
+```
+C0 - C1 - C2 - C3 (bugFix*, C3 is rebased)
+   main pointing at C2
+   (Linear history instead of branched)
+```
+
+---
+
+### Level 5: Detach yo' HEAD
+
+**Problem Statement:**
+Detach HEAD from the bugFix branch and attach it directly to commit C4. Understand that HEAD can point directly to a commit instead of a branch.
+
+**Visual Diagram (Current State - HEAD attached to branch):**
+```
+C0 - C1 - C2 - C3 - C4
+              bugFix*
+   (HEAD -> bugFix)
+```
+
+**Solution Diagram (Answer State - HEAD detached):**
+```
+C0 - C1 - C2 - C3 - C4
+              bugFix
+   (HEAD -> C4, detached)
+```
+
+---
+
+## How to View Screenshots
+
+To view the actual interactive screenshots and complete visualizations of each level:
+1. Visit [Learn Git Branching](https://learngitbranching.js.org/)
+2. Navigate through each level in the Introduction Sequence
+3. Observe the real-time visualization on the right side as you execute commands
+4. Compare your solution with the goal visualization shown in the pink panel
+
+## Resources
+
+- **Official Learn Git Branching**: https://learngitbranching.js.org/
+- **Git Documentation**: https://git-scm.com/doc
+- **Branching Model**: https://nvie.com/posts/a-successful-git-branching-model/
